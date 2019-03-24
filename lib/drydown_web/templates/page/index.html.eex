@@ -1,0 +1,5 @@
+<section class="phx-hero">
+<h1>Waiting to dry ... </h1>
+<div><p id="weight"><%= @weight %> g</p></div>
+  <div><a href="/csv">Download CSV</a></div>
+</section>
