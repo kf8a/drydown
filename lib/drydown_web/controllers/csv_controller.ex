@@ -12,6 +12,7 @@ defmodule DrydownWeb.CsvController do
     {:ok, table} = :dets.open_file(:disk_storage, [type: :set])
     # ms = :ets.fun2ms fn {time, weight} -> [time, weight] end
     :dets.select(table, [{{:"$1", :"$2"}, [], [[:"$1", :"$2"]]}])
+    |> Enum.sort
     |> CSV.encode
     |> Enum.to_list
     |> to_string
